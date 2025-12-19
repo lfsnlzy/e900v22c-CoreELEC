@@ -1,5 +1,11 @@
-#! /bin/sh
-version="20.1-Nexus"
+#!/bin/sh
+
+# Variable/Constant Define.
+version=$1
+if [ -z "${version}" ]; then
+    echo "<BadUsage>Usage: $0 <version>"
+    exit 1
+fi
 source_img_name="CoreELEC-Amlogic-ng.arm-${version}-Generic"
 source_img_file="${source_img_name}.img.gz"
 source_img_url="https://github.com/CoreELEC/CoreELEC/releases/download/${version}/${source_img_name}.img.gz"
@@ -51,7 +57,7 @@ echo "Copying rc_keymap files"
 sudo cp ${common_files}/rc_maps.cfg ${config_path}/rc_maps.cfg
 sudo chown root:root ${config_path}/rc_maps.cfg
 sudo chmod 0664 ${config_path}/rc_maps.cfg
-sudo cp ${common_files}/e900v22c.rc_keymap ${config_path}/rc_keymaps/e900v22c
+sudo cp ${common_files}/e900v22c ${config_path}/rc_keymaps/e900v22c
 sudo chown root:root ${config_path}/rc_keymaps/e900v22c
 sudo chmod 0664 ${config_path}/rc_keymaps/e900v22c
 
@@ -92,4 +98,3 @@ mv ${source_img_name}.img ${target_img_name}.img
 echo "Compressing CoreELEC image"
 gzip ${target_img_name}.img
 sha256sum ${target_img_name}.img.gz > ${target_img_name}.img.gz.sha256
-
