@@ -1,0 +1,30 @@
+# table CMCC-REMOTE, type: NEC
+0x22dc	KEY_POWER				#盒子关机
+#0xe0e0c						#红外学习键
+0x228d	KEY_MENU				#设置
+0x229c	KEY_MUTE				#静音
+0x22ca	KEY_UP					#上
+0x22d2	KEY_DOWN				#下
+0x2299	KEY_LEFT				#左
+0x22c1	KEY_RIGHT				#右
+0x22ce	KEY_ENTER				#确定
+0x2282	KEY_MENU				#菜单
+0x2295	KEY_BACK				#返回
+0x2280	KEY_VOLUMEUP			#音量+
+0x2281	KEY_VOLUMEDOWN			#音量-
+0x2288	KEY_HOME				#主页
+0x22f0	KEY_EPG					#M键改EPG
+0x2285	KEY_CAPSLOCK			#频道+改大写锁定
+0x2286	KEY_NUMLOCK				#频道-改数字键锁定
+0x2292	KEY_1					#1
+0x2293	KEY_2					#2
+0x22cc	KEY_3					#3
+0x228e	KEY_4					#4
+0x228f	KEY_5					#5
+0x22c8	KEY_6					#6
+0x228a	KEY_7					#7
+0x228b	KEY_8					#8
+0x22c4	KEY_9					#9
+0x22da	KEY_BACKSLASH			##键改 /
+0x2287	KEY_0					#0
+0x22d0	KEY_DELETE				#*键改删除
