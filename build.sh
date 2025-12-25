@@ -48,10 +48,10 @@ sudo chown root:root ${systemd_path}/sprd_sdio-firmware-aml.service
 sudo chmod 0664 ${systemd_path}/sprd_sdio-firmware-aml.service
 sudo ln -s ../sprd_sdio-firmware-aml.service ${systemd_path}/multi-user.target.wants/sprd_sdio-firmware-aml.service
 
-#echo "Copying fs-resize script"
-#sudo cp ${common_files}/fs-resize ${libreelec_path}/fs-resize
-#sudo chown root:root ${libreelec_path}/fs-resize
-#sudo chmod 0775 ${libreelec_path}/fs-resize
+echo "Copying fs-resize script"
+sudo cp ${common_files}/fs-resize ${libreelec_path}/fs-resize
+sudo chown root:root ${libreelec_path}/fs-resize
+sudo chmod 0775 ${libreelec_path}/fs-resize
 
 echo "Copying remote files"
 sudo cp ${common_files}/remote.conf ${config_path}/remote.conf
