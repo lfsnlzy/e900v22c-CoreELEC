@@ -10,7 +10,7 @@ source_img_name="CoreELEC-Amlogic-ng.arm-${version}-Generic"
 source_img_file="${source_img_name}.img.gz"
 source_img_url="https://github.com/CoreELEC/CoreELEC/releases/download/${version}/${source_img_name}.img.gz"
 target_img_prefix="CoreELEC-Amlogic-ng.arm-${version}"
-target_img_name="${target_img_prefix}-E900V22C-$(date +%Y.%m.%d)"
+target_img_name="${target_img_prefix}-CMCC-$(date +%Y.%m.%d)"
 mount_point="target"
 common_files="common-files"
 system_root="SYSTEM-root"
@@ -20,7 +20,7 @@ libreelec_path="${system_root}/usr/lib/libreelec"
 config_path="${system_root}/usr/config"
 kodi_userdata="${mount_point}/.kodi/userdata"
 
-echo "Welcome to build CoreELEC for Skyworth E900V22C!"
+echo "Welcome to build CoreELEC for CMCC!"
 echo "Downloading CoreELEC-${version} generic image"
 wget ${source_img_url} -O ${source_img_file} | exit 1
 echo "Decompressing CoreELEC image"
@@ -31,8 +31,8 @@ mkdir ${mount_point}
 echo "Mounting CoreELEC boot partition"
 sudo mount -o loop,offset=4194304 ${source_img_name}.img ${mount_point}
 
-echo "Copying E900V22C DTB file"
-sudo cp ${common_files}/e900v22c.dtb ${mount_point}/dtb.img
+echo "Copying CMCC DTB file"
+sudo cp ${common_files}/lb2002.dtb ${mount_point}/dtb.img
 
 echo "Decompressing SYSTEM image"
 sudo unsquashfs -d ${system_root} ${mount_point}/SYSTEM
